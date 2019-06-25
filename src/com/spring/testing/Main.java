@@ -7,10 +7,13 @@ public class Main {
 
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext myContext = new AnnotationConfigApplicationContext(MyConfig.class);
+		
 		Room myRoom = myContext.getBean("presidentialSuite", Room.class);
 		
 		System.out.println(myRoom.getRoomNumber());
 		System.out.println(myRoom.getRoomGuests());
+		System.out.println(((PresidentialSuite) myRoom).getNewGuests());
+		System.out.println(((PresidentialSuite) myRoom).getGuestAddress());
 		
 		RoomService myRoomService = myContext.getBean(RoomService.class);
 		

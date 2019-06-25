@@ -1,9 +1,22 @@
 package com.spring.testing;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class PresidentialSuite implements Room {
+
+	private Guest newGuest;
+	private GuestAddress guestAddress;
+
+	@Autowired
+	public PresidentialSuite(Guest newGuest,
+		GuestAddress guestAddress) {
+		// injects newGuest
+		super();
+		this.newGuest = newGuest;
+		this.guestAddress = guestAddress;
+	}
 
 	@Override
 	public String getRoomNumber() {
@@ -12,7 +25,17 @@ public class PresidentialSuite implements Room {
 
 	@Override
 	public String getRoomGuests() {
-		return "Current Presidential Suite guest is Mr. Trump";
+		return "Current Presidential Suite guest is Mr. Smith";
+	}
+
+	// returns newGuest injection
+	public String getNewGuests() {
+		return newGuest.getGuest();
+	}
+
+	// returns guestAddress injection
+	public String getGuestAddress() {
+		return guestAddress.getAddress();
 	}
 
 }
