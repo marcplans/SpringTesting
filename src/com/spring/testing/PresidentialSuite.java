@@ -6,18 +6,20 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PresidentialSuite implements Room {
+	
+//	@Autowired
+//	@Qualifier("guestFromNY")
+//	private Guest newGuest;
 
-	private Guest newGuest;
-	private GuestAddress guestAddress;
 
-	@Autowired
-	public PresidentialSuite(Guest newGuest,
-		GuestAddress guestAddress) {
-		// injects newGuest
-		super();
-		this.newGuest = newGuest;
-		this.guestAddress = guestAddress;
-	}
+//	@Autowired
+//	public PresidentialSuite(Guest newGuest,
+//		GuestAddress guestAddress) {
+//		// injects newGuest
+//		super();
+//		this.newGuest = newGuest;
+//		this.guestAddress = guestAddress;
+//	}
 
 	@Override
 	public String getRoomNumber() {
@@ -25,18 +27,11 @@ public class PresidentialSuite implements Room {
 	}
 
 	@Override
-	public String getRoomGuests() {
+	public String getRoomGuest() {
 		return "Current Presidential Suite guest is Mr. Smith";
+//		return newGuest.getNewGuest();
 	}
 
-	// returns newGuest injection
-	public String getNewGuests() {
-		return newGuest.getGuest();
-	}
 
-	// returns guestAddress injection
-	public String getGuestAddress() {
-		return guestAddress.getAddress();
-	}
 
 }

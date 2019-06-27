@@ -3,11 +3,12 @@ package com.spring.testing;
 import org.springframework.stereotype.Component;
 
 @Component
-public class GuestFromNY implements Guest {
-
+public class GuestFromMA implements Guest {
+	
 	@Override
 	public String getNewGuest() {
-		return "Guest from NY is Ms. White";
+		// TODO Auto-generated method stub
+		return "New guest from MA is Mr. Thompson";
 	}
 
 }
